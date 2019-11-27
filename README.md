@@ -15,7 +15,6 @@ As A user, I should be able to:
  
 ***WIREFRAMES***
 https://wireframe.cc/gbbzsc
-<a href="https://i.imgur.com/vst6xGx.png" alt="Wireframe">
 
 https://trello.com/b/r5EtviyY/project-2-api
 
