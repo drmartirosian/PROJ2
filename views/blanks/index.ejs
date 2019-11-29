@@ -1,36 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>PROFILES PAGE</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li>
+            <% if (user) { %>
+                <a href="/logout">Log Out</a>
+            <% } else { %>
+                <a href="/auth/google">Login with Google</a>
+            <% } %>
+            </li>
+        </ul>
+    </nav>
 
 
-  <body>
-    <a href="/">BACK</a>
 
-    <h4>All Flights</h4>
-
-
-    <table class="table table-striped table-hover table-light">
-      <thead>
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Intro</th>
-        </tr>
-      </thead>
-
-
-      <tbody>
-        <% blanks.forEach(function(b){ %>
-          <td><%= b.name %></td>
-          <td><%= b.age %></td>
-          <td><%= b.intro %></td>
-          <td> <a href="/blanks/<%= b._id %>"> MORE </a> </td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-  </body>
+</body>
 </html>

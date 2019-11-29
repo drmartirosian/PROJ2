@@ -1,11 +1,9 @@
-var express = require('express');
-var router = express.Router();
-const blanksCtrl = require('../controllers/blanks')
+var router = require('express').Router();
+var blanksCtrl = require('../controllers/blanks');
+
+// GET /blanks
+router.get('/blanks', blanksCtrl.index);
 
 
-router.get('/', blanksCtrl.index);
-// router.get('/new', blanksCtrl.new);
-// router.get('/:id', blanksCtrl.show);
-// router.post('/', blanksCtrl.create);
 
 module.exports = router;

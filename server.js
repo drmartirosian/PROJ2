@@ -4,19 +4,26 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-//MOUNT
-//---------------------------------------------------------//
+// authentication
+var session = require('express-session');
+var passport = require('passport');
+
+// load the env vars
+require('dotenv').config();
+
+// create the Express app
+var app = express();
+
+// connect to the MongoDB with mongoose
+require('./config/database');
+// configure passport for our app
+require('./config/passport');
+
+//----------------------------------------------------------//
 var indexRouter = require('./routes/index');
 var blanksRouter = require('./routes/blanks');
-//---------------------------------------------------------//
+//----------------------------------------------------------//
 
-//env file
-// require('dotenv').config();
-//express app
-var app = express();
-//connect to MongoDB with Mongoose
-require('./config/database');
-// require('./config/passport');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -28,12 +35,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//ROUTERS
-//---------------------------------------------------------//
-app.use('/', indexRouter);
-app.use('/blanks', blanksRouter);
-//---------------------------------------------------------//
+// session middleware for passport
+app.use(session({
+  secret: 'SEIRocks!',
+  resave: false,
+  saveUninitialized: true
+}));
 
+app.use(passport.initialize());
+app.use(passport.session());
+
+//----------------------------------------------------------//
+app.use('/', indexRouter);
+app.use('/', blanksRouter);
+//----------------------------------------------------------//
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,11 +1,12 @@
-var Blanks = require('../models/blank');
+const Blank = require('../models/blank');
 
 module.exports = {
-    index,
+  index,
 };
 
-function index (req, res){
-    Blanks.find({}, function(err, blanks){
-        res.render('blanks/index', {blanks})
-    })
-}
+function index(req, res, next) {
+    res.render('blanks/index', {
+      name: req.query.name,
+      user: req.user
+    });
+};
