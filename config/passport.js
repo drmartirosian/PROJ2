@@ -1,6 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const Blank = require('../models/blank');
+const Dbase = require('../models/dbase');
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -8,36 +8,34 @@ passport.use(new GoogleStrategy({
     callbackURL: process.env.GOOGLE_CALLBACK
   }, function(accessToken, refreshToken, profile, cb) {
     // a user has logged in with OAuth
-    Blank.findOne({'googleId': profile.id}, function(err, blank) {
+    Dbase.findOne({'googleId': profile.id}, function(err, dbase) {
       if (err) return cb(err);
-      if (blank) {
+      if (dbase) {
         // returning user
-        return cb(null, blank);
+        return cb(null, dbase);
       } else {
         // we have a brand new user
-        var newBlank = new Blank({
+        var newDbase = new Dbase({
           name: profile.displayName,
           email: profile.emails[0].value,
           googleId: profile.id
         });
-        newBlank.save(function(err) {
+        newDbase.save(function(err) {
           if (err) return cb(err);
-          return cb(null, newBlank);
+          return cb(null, newDbase);
         });
       }
     });
   }
 ));
 
-passport.serializeUser(function(blank, done) {
-  done(null, blank.id);
+passport.serializeUser(function(dbase, done) {
+  done(null, dbase.id);
 });
+
 
 passport.deserializeUser(function(id, done) {
-  Blank.findById(id, function(err, blank) {
-    done(err, blank);
+  Dbase.findById(id, function(err, dbase) {
+    done(err, dbase);
   });
 });
-
-
-

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PROFILES PAGE</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav>
+        <ul>
+            <li>
+                <a>LOGO</a>
+            </li>
+            <li>
+            <% if (user) { %>
+                <a href="/logout">Log Out</a>
+            <% } else { %>
+                <a href="/auth/google">Login</a>
+            <% } %>
+            </li>
+        </ul>
+    </nav>
+
+
+
+    <!-- USER PROFILES -->
+    <div>
+    <% dbases.forEach(function(dbase) { %>
+        <div>
+              <!--- USERNAME--->
+            <div>
+                <span><%= dbase.name %></span>
+            </div>
+              <!--- TEXT --->
+            <ul>
+                <% dbase.bios.forEach(function(bio) { %>
+                    <li><%- bio.text %></li>
+                <% }) %>
+            </ul>  
+            <!--- INPUT/SUBMIT--->
+            <% if (dbase._id.equals(user && user._id)) { %>
+            <div>
+                <form action="/bios" method="POST">
+                    <input type="text" name="text">
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+            <% } %>           
+        </div>
+    <% }); %>
+    </div>
+
+
+</body>
+</html>

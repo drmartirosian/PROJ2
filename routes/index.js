@@ -12,7 +12,7 @@ router.get('/auth/google', passport.authenticate('google', {
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/blanks',
+    successRedirect: '/dbases',
     failureRedirect: '/'
   }
 ));
@@ -29,4 +29,5 @@ router.get('/', function(req, res, next) {
     user: req.user
   });
 });
+
 module.exports = router;
