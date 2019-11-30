@@ -1,15 +1,14 @@
 var mongoose = require('mongoose');
 
-var bioSchema = new mongoose.Schema({
+var aboutmeSchema = new mongoose.Schema({
   text: String,
 });
 
 var profileSchema = new mongoose.Schema({
   name: String,
-  age: Number,
-  single: Boolean,
+  avatar: String,
   googleId: String,
-  bios: [bioSchema],
+  aboutme: [aboutmeSchema],
 });
 
 
