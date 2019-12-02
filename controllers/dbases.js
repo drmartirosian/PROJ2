@@ -5,12 +5,11 @@ const Dbase = require('../models/dbase');
 module.exports = {
   index,
   create,
-  new: dDelete,
+  // new: dDelete,
   show,
-  update,
-
-  new: newDB,
-  edit, 
+  // update,
+  // new: newDB,
+  // edit, 
 };
 
 function index(req, res, next) {
@@ -24,19 +23,29 @@ function index(req, res, next) {
     });
   });
 }
+
 function create(req, res, next) {
   req.user.aboutme.push(req.body);
   req.user.save(function(err) {
+
     res.redirect('/dbases');
+
   });
 }
-function dDelete(req, res, next) {
-}
-function show(req, res){
-}
-function update(req, res){ 
-}
-function newDB(req, res){
-}
-function edit(req, res){ 
-}
+
+// function dDelete(req, res, next) {
+// }
+
+function show(res){
+
+  res.render('dbases/show')
+};
+
+// function update(req, res){ 
+// }
+
+// function newDB(req, res){
+// }
+
+// function edit(req, res){ 
+// }

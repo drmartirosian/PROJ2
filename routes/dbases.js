@@ -4,6 +4,8 @@ var dBasesCtrl = require('../controllers/dbases');
 
 router.get('/dbases', dBasesCtrl.index);
 router.post('/aboutme', isLoggedIn, dBasesCtrl.create);
+router.post('/show/:id', isLoggedIn, dBasesCtrl.show);
+
 
 
 

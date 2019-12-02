@@ -1,14 +1,13 @@
 var mongoose = require('mongoose');
 
-var aboutmeSchema = new mongoose.Schema({
-  text: String,
+var aboutmeSchema = new mongoose.Schema({ 
+  text: String, 
 });
 
 var profileSchema = new mongoose.Schema({
-  name: String,
-  avatar: String,
-  googleId: String,
-  aboutme: [aboutmeSchema],
+  name: String, //username
+  googleId: String, //-----use to find matches in future?
+  aboutme: [aboutmeSchema], //blog schema
 });
 
 
