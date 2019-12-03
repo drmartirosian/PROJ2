@@ -1,12 +1,35 @@
 <%- include('../partials/header') %>
 
 
-<h1>HOWDY!</h1>
+
+   
+<h1>SHOW PAGE</h1>
+   
+
+   
+<!-- USER PROFILES -->
+        <% users.forEach(function(d) { %> 
+    <div>
+
+        <!--USER PROFILE--> 
+        <div class="profile">
+            <!--- USERNAME--->
+            <span><%= d.name %></span>
+            <!--- TEXT --->
+            <ul>
+                <% d.aboutme.forEach(function(b) { %>
+                    <li><%- b.text %></li>
+                <% }) %>
+            </ul>  
+            <a href="<%= d._id %>/edit"  >EDIT PAGE</a>
+        </div>
+
+
+        <% }); %>
+    </div>
+
+
+
+
     
-
-
-
-
-
-
 <%- include('../partials/footer') %>

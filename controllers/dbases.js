@@ -20,7 +20,6 @@ function index(req, res, next) {
     });
   });
 }
-
 function create(req, res, next) {
   req.user.aboutme.push(req.body);
   req.user.save(function(err) {
@@ -29,21 +28,36 @@ function create(req, res, next) {
 
   });
 }
-
-// function dDelete(req, res, next) {
-// }
-
+function dDelete(req, res, next) {
+}
 function show(req, res){
-  res.render('dbases/show', {user: req.user})
+  Dbase.find(function(err, users) {
+    res.render('dbases/show', {
+      users, 
+      user: req.user
+    });
+  });
 };
+// function show(req, res){
+// Dbase.findById(req.params.id, function(err, users) {
+//   res.render('dbases/show', { 
+//     users, 
+//     user: req.user,
+//   });
+// });
+// };
+
 
 // function update(req, res){ 
 // }
-
 function newDB(req, res){
   res.render('dbases/show')
 }
-
-function edit(req, res){ 
-  res.render('dbases/show')
-}
+function edit(req, res){
+  Dbase.find(function(err, users) {
+    res.render('dbases/edit', {
+      users, 
+      user: req.user
+    });
+  });
+};

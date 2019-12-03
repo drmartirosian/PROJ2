@@ -1,8 +1,40 @@
 <%- include('../partials/header') %>
 
+<h1>EDIT PAGE</h1>
+<!-- USER PROFILES -->
+<div>
+    <% users.forEach(function(d) { %> 
+        <div>
+            <!--- PROFILE--->
+            <div class="profile">
 
-<h1>HOWDY!</h1>
+                <!---NAME-->
+                <span><%= d.name %></span>
+    
+                
+                <!--- TEXT --->
+                <ul>
+                    <% d.aboutme.forEach(function(b) { %>
+                        <li><%- b.text %></li>
+                    <% }) %>
+                </ul>  
     
 
+                <!--- INPUT/SUBMIT--->
+                <% if (d._id.equals(user && user._id)) { %>
+                    <form action="/dbases" method="POST"> 
+                        <label>My Code Projects: </label>
+                        <br>
+                        <input placeholder="Links here..." type="text" name="text">
+                        <button type="submit">ADD</button>
+                    </form>
+
+
+            </div>
+                <% } %>    
+
+        </div>
+    <% }); %>
+</div>
 
 <%- include('../partials/footer') %>
