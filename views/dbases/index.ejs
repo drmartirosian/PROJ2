@@ -1,26 +1,12 @@
 <%- include('../partials/header') %>
 
-
-
-
-
-
-<h1>INDEX PAGE</h1>
-   
-<!-- USER PROFILES -->
 <div>
+<h1>INDEX PAGE</h1>
     <% users.forEach(function(d) { %> 
         <div class="profile">
             <a href= "dbases/<%= d._id %>" > <%= d.name  %> </a>
         </div>
     <% }); %>
 </div>
-
-
-
-
-
-
-
 
 <%- include('../partials/footer') %>

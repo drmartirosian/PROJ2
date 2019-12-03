@@ -12,16 +12,24 @@
 <!-- NAVBAR -->
 <nav class="navbar">
     <!--- FUTURE LOGO --->
-    <logo><a href="/dbases">HOME</a></logo>
+    <a href="/dbases">HOME</a>
+    <% if (user) { %>
+    <a href="/dbases/<%= user._id %>">SHOW</a>
+    <a href="/dbases/<%= user._id %>/edit">EDIT</a>
+    <% } %>
+    
+ 
+   
 
-    <br><br><br>
+
+
 
     <!--- LOGIN --------->
     <login class="login">
     <% if (user) { %>
-        <a href="/logout">Log Out</a>
+        <a href="/logout">LOGOUT</a>
     <% } else { %>
-        <a href="/auth/google">Login</a>
+        <a href="/auth/google">LOGIN</a>
     <% } %>
-    </login>
+    </login>    
 </nav>

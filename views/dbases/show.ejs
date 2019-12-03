@@ -1,35 +1,23 @@
 <%- include('../partials/header') %>
 
 
-
-   
 <h1>SHOW PAGE</h1>
-   
-
-   
-<!-- USER PROFILES -->
-        <% users.forEach(function(d) { %> 
-    <div>
-
-        <!--USER PROFILE--> 
-        <div class="profile">
-            <!--- USERNAME--->
-            <span><%= d.name %></span>
-            <!--- TEXT --->
-            <ul>
-                <% d.aboutme.forEach(function(b) { %>
-                    <li><%- b.text %></li>
-                <% }) %>
-            </ul>  
-            <a href="<%= d._id %>/edit"  >EDIT PAGE</a>
-        </div>
-
-
-        <% }); %>
-    </div>
-
-
-
-
+<div class="profile">
+    <!--USERNAME-->
+    <h1><%= user.name %></h1>
     
+    <!--PIC-->
+
+    <!--TEXT-->
+    <% user.aboutme.forEach(function(b) { %>
+        <li>
+            <%- b.text %>
+        </li>
+    <% }) %>
+    <br>
+    
+    <a href="/dbases/<%= user._id %>/edit">EDIT</a>
+</div>
+
+
 <%- include('../partials/footer') %>

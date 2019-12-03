@@ -7,6 +7,7 @@ router.post('/', isLoggedIn, dBasesCtrl.create);
 router.get('/:id', isLoggedIn, dBasesCtrl.show);
 router.get('/:id/edit', isLoggedIn, dBasesCtrl.edit);
 router.get('/new', isLoggedIn, dBasesCtrl.new);
+// router.get('/:id', isLoggedIn, dBasesCtrl.delete);
 
 
 
