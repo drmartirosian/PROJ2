@@ -8,17 +8,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar">
-            <!--- FUTURE LOGO --->
-            <logo><h1 href="/dbases">daterBase</h1></logo>
 
-            <!--- LOGIN --------->
-            <login class="login">
-            <% if (user) { %>
-                <a href="/logout">Log Out</a>
-            <% } else { %>
-                <a href="/auth/google">Login</a>
-            <% } %>
-            </login>
-    </nav>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <!--- FUTURE LOGO --->
+    <logo><a href="/dbases">HOME</a></logo>
+
+    <br><br><br>
+
+    <!--- LOGIN --------->
+    <login class="login">
+    <% if (user) { %>
+        <a href="/logout">Log Out</a>
+    <% } else { %>
+        <a href="/auth/google">Login</a>
+    <% } %>
+    </login>
+</nav>

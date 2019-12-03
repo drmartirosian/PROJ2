@@ -51,7 +51,7 @@ app.use(passport.session());
 
 //-------------------MOUNT---------------------------------------//
 app.use('/', indexRouter);
-app.use('/', dBasesRouter);
+app.use('/dbases', dBasesRouter);
 //----------------------------------------------------------//
 
 // CATCH 404 and forward to error handler

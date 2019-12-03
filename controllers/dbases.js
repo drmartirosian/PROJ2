@@ -8,18 +8,15 @@ module.exports = {
   // new: dDelete,
   show,
   // update,
-  // new: newDB,
-  // edit, 
+  new: newDB,
+  edit, 
 };
 
 function index(req, res, next) {
-  Dbase.find(function(err, indexVar) {
+  Dbase.find({}, function(err, users) {
     res.render('dbases/index', {
-
-      indexVar, //used in ejs for each
-
+      users, 
       user: req.user
-
     });
   });
 }
@@ -36,16 +33,17 @@ function create(req, res, next) {
 // function dDelete(req, res, next) {
 // }
 
-function show(res){
-
-  res.render('dbases/show')
+function show(req, res){
+  res.render('dbases/show', {user: req.user})
 };
 
 // function update(req, res){ 
 // }
 
-// function newDB(req, res){
-// }
+function newDB(req, res){
+  res.render('dbases/show')
+}
 
-// function edit(req, res){ 
-// }
+function edit(req, res){ 
+  res.render('dbases/show')
+}
