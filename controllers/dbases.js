@@ -37,6 +37,7 @@ function create(req, res, next) {
 
 function show(req, res){
   const userid = req.params.id;
+  console.log(req.params.id)
   Dbase.findById(userid, function(err, users, userid) {
     res.render('dbases/show', {
       users, 

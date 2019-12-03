@@ -11,25 +11,20 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <!--- FUTURE LOGO --->
-    <a href="/dbases">HOME</a>
+    <a href="/dbases"> <image src="https://i.imgur.com/HfNrKNn.png" alt="PIC" border="0" width="100" height="100"> </a>
+
     <% if (user) { %>
-    <a href="/dbases/<%= user._id %>">SHOW</a>
-    <a href="/dbases/<%= user._id %>/edit">EDIT</a>
+        <a href="/dbases/<%= user._id %>">SHOW</a>
+
+        <a href="/dbases/<%= user._id %>/edit">EDIT</a>
     <% } %>
     
- 
-   
-
-
-
-
-    <!--- LOGIN --------->
+    
     <login class="login">
-    <% if (user) { %>
-        <a href="/logout">LOGOUT</a>
-    <% } else { %>
-        <a href="/auth/google">LOGIN</a>
-    <% } %>
+        <% if (user) { %>
+            <a href="/logout">LOGOUT</a>
+        <% } else { %>
+            <a href="/auth/google">LOGIN</a>
+        <% } %>
     </login>    
 </nav>
