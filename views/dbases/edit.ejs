@@ -8,24 +8,23 @@
     <!--- TEXT LIST--->
     <ul>
         <% user.aboutme.forEach(function(b) { %>
-            <li>
+            <li class="line">
+                <%= b.text %>
 
 
+
+                <form action="/dbases/<%=b._id%>?_method=PUT" method="POST">
+                    <input type="text" name="text">
+                    <button type="submit">UPDATE</button>
+                </form>
 
 
 
                 <form action="/dbases/<%=b._id%>?_method=DELETE" method="POST">
                     <button type="submit">DELETE</button>
                 </form>
-
-
-
-
-
-
-
-                <%= b.text %>
             </li>
+
         <% }) %>
     </ul>  
     <!--- ADD TEXT --->
