@@ -10,10 +10,12 @@ module.exports = {
   update,
   new: newDB,
   edit, 
+  buttonLikes,
 };
-
+//-------------------------------------------------
 function index(req, res, next) {
   Dbase.find({}, function(err, users, avatar) {
+    console.log(req.params)
     res.render('dbases/index', {
       users, 
       user: req.user,
@@ -21,6 +23,7 @@ function index(req, res, next) {
   });
   console.log('INDEX FIRED!')
 }
+//-------------------------------------------------
 function create(req, res, next) {
   req.user.aboutme.push(req.body);
   req.user.save(function(err) {
@@ -28,6 +31,7 @@ function create(req, res, next) {
   });
   console.log('CREATE FIRED!')
 }
+//-------------------------------------------------
 function dDelete(req, res, next) {
 // Remove a destination from the user
   Dbase.findById(req.user._id, function(err, user) {
@@ -45,6 +49,7 @@ function dDelete(req, res, next) {
   res.redirect('/dbases');
   console.log('DELETE FIRED!')
 };
+//-------------------------------------------------
 function show(req, res){
   const userid = req.params.id;
   Dbase.findById(userid, function(err, users, userid) {
@@ -80,6 +85,7 @@ function newDB(req, res){
   res.render('dbases/new');
   console.log('NEW FIRED!')
 }
+//-------------------------------------------------
 function edit(req, res){
   Dbase.find(function(err, users) {
     res.render('dbases/edit', {
@@ -89,3 +95,26 @@ function edit(req, res){
   });
   console.log('EDIT FIRED!')
 };
+//-------------------------------------------------
+function buttonLikes (req, res){
+
+  //find id of "liked" user profile
+  Dbase.findById(req.user.id, function(err, user){
+    user.matches.push(req.params._id);
+  }) 
+
+  //save
+  user.save();
+  
+  //If both accoutns "liked", trigger 
+  if (Dbase.matches === Dbase.Matches) {
+    console.log('HOWDY!');
+  } else {
+    console.log('NAWDY...');
+  }
+  
+  console.log('This ID Is: ' + user)
+  console.log('button fired!')
+  res.redirect('/dbases')
+};
+//-------------------------------------------------

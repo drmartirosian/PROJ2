@@ -1,24 +1,21 @@
 <%- include('../partials/header') %>
 
-<h1>EDIT PAGE</h1>
 
-<div class="profile">
+<div >
+    <h1>My Blog</h1>
+
     <!---NAME-->
     <h3><%= user.name %></h3>
     <!--- TEXT LIST--->
     <ul>
         <% user.aboutme.forEach(function(b) { %>
-            <li class="line">
+            <li>
                 <%= b.text %>
-
-
 
                 <form action="/dbases/<%=b._id%>?_method=PUT" method="POST">
                     <input type="text" name="text">
                     <button type="submit">UPDATE</button>
                 </form>
-
-
 
                 <form action="/dbases/<%=b._id%>?_method=DELETE" method="POST">
                     <button type="submit">DELETE</button>

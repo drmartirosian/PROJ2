@@ -1,13 +1,22 @@
 <%- include('../partials/header') %>
 
 <div>
-    <h1>INDEX PAGE</h1>
+    <h1>Home</h1>
 
     <% users.forEach(function(d) { %> 
         <div class="profile">
+
             <a href= "dbases/<%= d._id %>" > <%= d.name  %> </a>
+            <br>
+
+            <form action="/<%= d._id %>?_method=PUT" method="">
+                <button class="btn btn-outline-info" type="submit" >LIKE</button>
+            </form>
+            
+            
         </div>
     <% }); %>
+
 </div>
 
 <%- include('../partials/footer') %>

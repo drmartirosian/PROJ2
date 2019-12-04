@@ -9,7 +9,7 @@ router.get('/:id/edit', isLoggedIn, dBasesCtrl.edit)
 router.get('/new', isLoggedIn, dBasesCtrl.new);
 router.delete('/:id', isLoggedIn, dBasesCtrl.delete);
 router.put('/:id', isLoggedIn, dBasesCtrl.update);
-
+router.put('/:id', isLoggedIn, dBasesCtrl.buttonLikes);
 
 // LOGGED IN REQUIRED FEATURES
 function isLoggedIn(req, res, next) {

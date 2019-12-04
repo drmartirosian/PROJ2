@@ -10,6 +10,7 @@ var profileSchema = new mongoose.Schema({
   avatar: String,
   googleId: String, 
   aboutme: [aboutmeSchema],
+  favorites: [],
 });
 
 
