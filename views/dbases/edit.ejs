@@ -5,17 +5,30 @@
 <div class="profile">
     <!---NAME-->
     <h3><%= user.name %></h3>
-
-    <!--- TEXT --->
+    <!--- TEXT LIST--->
     <ul>
         <% user.aboutme.forEach(function(b) { %>
             <li>
-                <%- b.text %>
+
+
+
+
+
+                <form action="/dbases/<%=b._id%>?_method=DELETE" method="POST">
+                    <button type="submit">DELETE</button>
+                </form>
+
+
+
+
+
+
+
+                <%= b.text %>
             </li>
         <% }) %>
     </ul>  
-    
-    <!--- TEXT FORM--->
+    <!--- ADD TEXT --->
     <% if (user._id.equals(user && user._id)) { %>
         <form action="/dbases" method="POST"> 
             <label>My Code Projects: </label>

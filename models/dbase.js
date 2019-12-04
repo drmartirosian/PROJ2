@@ -6,10 +6,10 @@ var aboutmeSchema = new mongoose.Schema({
 });
 
 var profileSchema = new mongoose.Schema({
-  name: String, //username
+  name: String, 
   avatar: String,
-  googleId: String, //-----use to find matches in future?
-  aboutme: [aboutmeSchema], //blog schema
+  googleId: String, 
+  aboutme: [aboutmeSchema],
 });
 
 

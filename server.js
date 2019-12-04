@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 //METHOD-OVERRIDE
 var methodOverride = require('method-override');
+
 // authentication
 var session = require('express-session');
 var passport = require('passport');

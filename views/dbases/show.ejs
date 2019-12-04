@@ -2,21 +2,20 @@
 
 
 <h1>SHOW PAGE</h1>
+
 <div class="profile">
     <!--USERNAME-->
     <h1><%= users.name %></h1>
     
-    <!--PIC-->
+    <!--PIC?????-->
    
-    
-
     <!--TEXT-->
     <% users.aboutme.forEach(function(b) { %>
-        <li>
-            <%- b.text %>
-        </li>
+           <p> <%- b.text %>  </p> 
     <% }); %>
+
     <br>
+
     <% if (users._id.equals(user && user._id)) { %>
     <a href="/dbases/<%= user._id %>/edit">EDIT</a>
     <% } else { %>

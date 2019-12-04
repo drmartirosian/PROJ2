@@ -5,9 +5,9 @@ const Dbase = require('../models/dbase');
 module.exports = {
   index,
   create,
-  // new: dDelete,
+  delete: dDelete,
   show,
-  // update,
+  update,
   new: newDB,
   edit, 
 };
@@ -26,18 +26,30 @@ function create(req, res, next) {
     res.redirect('/dbases');
   });
 }
-// //??????????????????????????????????
-// function dDelete(req, res, next) {
-//   Dbase.findByIdAndDelete(
-//     req.params.id)
-//     .then(function(err, users) {
-//     res.redirect('/dbases')
-//   })
-// }
+//-----------------------------------
+function dDelete(req, res, next) {
+// Remove a destination from the user
+  Dbase.findById(req.user._id, function(err, user) {
+     if ( user ) {
+       // Find subdoc
+       var subdoc = user.aboutme.id(req.params.id);
+       // Remove subdoc
+       subdoc.remove();
+       // Save user
+       user.save(function (err) {
+         if (err) return handleError(err);
+       });             
+     }
+  });
+  res.redirect('/dbases');
+};
 
+
+
+
+//-----------------------------------
 function show(req, res){
   const userid = req.params.id;
-  console.log(req.params.id)
   Dbase.findById(userid, function(err, users, userid) {
     res.render('dbases/show', {
       users, 
@@ -45,8 +57,8 @@ function show(req, res){
     });
   });
 };
-// function update(req, res){ 
-// }
+function update(req, res){ 
+}
 function newDB(req, res){
   res.render('dbases/new');
 }

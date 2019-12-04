@@ -28,3 +28,6 @@ a {
   border: 1px solid black;
   background: white;
 }
+li {
+  display: inline;
+}
