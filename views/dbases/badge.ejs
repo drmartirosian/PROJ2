@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<h3>Under construction...</h3>
+
+<div>
+    <div class="row row-cols-3">
+        <% users.badge.forEach(function(x) { %>
+            <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
+            <p href="<%= x.codertype %>" class="col card"><%= x.codertype %></p>
+            <p href="<%= x.phone %>" class="col card"><%= x.phone %></p>
+        <% }); %>
+    </div>
+
+    <div>
+        <% if (users === users) { %>
+        <form action="/dbases/new" method="POST" class="row row-cols-3"> 
+            <input placeholder="Name here" type="text" name="fullname">
+            <input placeholder="Fullstack? Front-End? Back-End?" type="text" name="codertype">
+            <input placeholder="phone number" type="number" name="phone">
+
+            <button class="badge badge-info " type="submit">ADD</button>
+        </form>
+        <% } %>
+    </div>
+</div>
+
+
+  
+        
+
+ 
+
+
+
+
+
+<%- include('../partials/footer') %>

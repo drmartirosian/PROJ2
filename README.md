@@ -3,19 +3,18 @@
 "All your daterBase are belong to us." --Zero Wing, 1989
 
 ***PURPOSE***
-This is a dating app designed for coders.
+This is a "dating" app designed to connect coders seeking employment and employers.
 
 ***USER STORY:***
 As A user, I should be able to:
 1. sign up/log in
 2. create my profile
-    upload pictures
-    edit bio
+    edit profile
     link social networks
 3. browse other profiles
-4. like/comment on other profiles
-5. see who i match with
-6. unmatch with someone
+4. create badges for employers to see
+    name, code background, phonenumber
+
  
 ***WIREFRAMES***
 https://wireframe.cc/gbbzsc
@@ -28,15 +27,18 @@ User profile page
 Comment Page
 
 ***HOW TO USE:***
-The user signs up and creates a profile. The user may then brows other profiles an "like" aspects of them. If two users "like", user will be notified. If the two are not interested afterword, they may unmatch. 
+The user signs up and creates a profile. The user may then brows other profiles. Users should be able to generate user "badges" to display introductory info for employers. 
 
 ***GETTING STARTED:***
 https://github.com/drmartirosian/PROJ2
 
 
 ***NEXT STEPS:***
+Add matching mechanism for employers and employed
 Add females start conversations feature (Bumble)
 Add animation for matches
+add resume builder
+enable photo upload
 
 ***TECH***
 JS, HTML, CSS, TXT, MongoDb, Node.js, Express, CodeVS

@@ -1,40 +1,35 @@
 <%- include('../partials/header') %>
 
-<h1>EDIT PAGE</h1>
-<!-- USER PROFILES -->
-<div>
-    <% users.forEach(function(d) { %> 
-        <div>
-            <!--- PROFILE--->
-            <div class="profile">
 
-                <!---NAME-->
-                <span><%= d.name %></span>
-    
-                
-                <!--- TEXT --->
-                <ul>
-                    <% d.aboutme.forEach(function(b) { %>
-                        <li><%- b.text %></li>
-                    <% }) %>
-                </ul>  
-    
+<div class="show">
+    <h3><%= user.name %>'s Blog</h3>
 
-                <!--- INPUT/SUBMIT--->
-                <% if (d._id.equals(user && user._id)) { %>
-                    <form action="/dbases" method="POST"> 
-                        <label>My Code Projects: </label>
-                        <br>
-                        <input placeholder="Links here..." type="text" name="text">
-                        <button type="submit">ADD</button>
-                    </form>
-
-
-            </div>
-                <% } %>    
-
-        </div>
-    <% }); %>
+    <!--- ADD TEXT --->
+    <% if (user._id.equals(users && user._id)) { %>
+        <form action="/dbases" method="POST"> 
+            <input placeholder="New posts here..." type="text" name="text">
+            <button class="btn-outline-success" type="submit">ADD</button>
+        </form>
 </div>
+    <% } %>    
+
+<% user.aboutme.forEach(function(b) { %>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <p class="card-text"> LINK:</p>
+            <form action="/dbases/<%=b._id%>?_method=PUT" method="POST">
+                <input type="text" name="text" placeholder="   <%= b.text %>">
+                <button class="badge badge-info" type="submit">UPDATE</button>
+            </form>
+            <form action="/dbases/<%=b._id%>?_method=DELETE" method="POST">
+                <button class="badge badge-danger" type="submit">DELETE</button>
+            </form>
+        </div>
+    </div>
+ <% }) %>
+
+
+
+ 
 
 <%- include('../partials/footer') %>

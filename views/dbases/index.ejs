@@ -2,24 +2,16 @@
 
 
 
+ <h1>Home</h1>
 
 
-
-<h1>INDEX PAGE</h1>
-   
-<!-- USER PROFILES -->
-<div>
-    <% users.forEach(function(d) { %> 
-        <div class="profile">
-            <a href= "dbases/<%= d._id %>" > <%= d.name  %> </a>
-        </div>
-    <% }); %>
-</div>
-
-
-
-
-
+<% users.forEach(function(d) { %> 
+<div class="card" style="width: 18rem;">
+    <a class="card-body" href= "dbases/<%= d._id %>" >
+        <h2><%= d.name  %> </h2>
+    </a>
+<% }); %>
+</a>
 
 
 

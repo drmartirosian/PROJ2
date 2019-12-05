@@ -6,6 +6,7 @@ var logger = require('morgan');
 
 //METHOD-OVERRIDE
 var methodOverride = require('method-override');
+
 // authentication
 var session = require('express-session');
 var passport = require('passport');
@@ -21,6 +22,7 @@ require('./config/passport');
 //--------------------REQUIRE--------------------------------------//
 var indexRouter = require('./routes/index');
 var dBasesRouter = require('./routes/dbases');
+var badgesRouter = require('./routes/badges');
 //----------------------------------------------------------//
 
 // view engine setup
@@ -52,6 +54,7 @@ app.use(passport.session());
 //-------------------MOUNT---------------------------------------//
 app.use('/', indexRouter);
 app.use('/dbases', dBasesRouter);
+app.use('/dbases', badgesRouter);
 //----------------------------------------------------------//
 
 // CATCH 404 and forward to error handler
