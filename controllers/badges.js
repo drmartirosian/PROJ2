@@ -10,7 +10,10 @@ module.exports = {
 
 //-------------------------------------------------
 function createBadge(req, res, next) {
+  // console.log(req.body)
   req.user.badge.push(req.body);
+  // console.log('USER',req.user)
+  // console.log('BODY',req.body)
   req.user.save(function(err) {
     res.redirect('/dbases');
   });

@@ -1,29 +1,28 @@
 <%- include('../partials/header') %>
 
+<h3>Under construction...</h3>
 
-<div class="show">
+<div>
+    <div class="row row-cols-3">
+        <% users.badge.forEach(function(x) { %>
+            <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
+            <p href="<%= x.codertype %>" class="col card"><%= x.codertype %></p>
+            <p href="<%= x.phone %>" class="col card"><%= x.phone %></p>
+        <% }); %>
+    </div>
 
+    <div>
+        <% if (users === users) { %>
+        <form action="/dbases/new" method="POST" class="row row-cols-3"> 
+            <input placeholder="Name here" type="text" name="fullname">
+            <input placeholder="Fullstack? Front-End? Back-End?" type="text" name="codertype">
+            <input placeholder="phone number" type="number" name="phone">
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-            <% users.badge.forEach(function(x) { %>
-               <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
-               <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
-               <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
-           <% }); %>
-             </div>
-
-
-    <h3>Under construction...</h3>
-
-   <!--- ADD TEXT --->
-   <% if (users === users) { %>
-    <form action="/dbases/new" method="POST"> 
-        <label>My Code Projects: </label>
-        <br>
-        <input placeholder="Badge inputs here" type="text" name="fullname">
-        <button type="submit">ADD</button>
-    </form>
-<% } %>
+            <button class="badge badge-info " type="submit">ADD</button>
+        </form>
+        <% } %>
+    </div>
+</div>
 
 
   

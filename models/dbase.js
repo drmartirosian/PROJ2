@@ -4,14 +4,14 @@ var resumeSchema = new mongoose.Schema(
   { firstname: String, },
   { lastname: String, },
   { age: Number, },
-  { code: String, },
+  { codelanguage: String, },
   { employed: Boolean, },
 );
 
 var badgeSchema = new mongoose.Schema(
-  { fullname: String, required: true,},
-  { codertype: String, required: true,},
-  { phone: Number, required: true,},
+  { fullname: String, },
+  { codertype: String, },
+  { phone: Number, },
 );
 
 var blogSchema = new mongoose.Schema(
