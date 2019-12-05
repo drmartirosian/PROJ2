@@ -2,12 +2,13 @@
 
 
 <div class="show">
-    <h3>User.id: <%= user %></h3> 
 
 
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
             <% users.badge.forEach(function(x) { %>
-               <a href="<%= x.fullname %>" class="col card"><%= x.text %></a>
+               <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
+               <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
+               <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
            <% }); %>
              </div>
 
@@ -15,7 +16,7 @@
     <h3>Under construction...</h3>
 
    <!--- ADD TEXT --->
-   <% if (user._id.equals(users && user._id)) { %>
+   <% if (users === users) { %>
     <form action="/dbases/new" method="POST"> 
         <label>My Code Projects: </label>
         <br>

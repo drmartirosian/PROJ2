@@ -9,7 +9,9 @@ var resumeSchema = new mongoose.Schema(
 );
 
 var badgeSchema = new mongoose.Schema(
-  { fullname: String, },
+  { fullname: String, required: true,},
+  { codertype: String, required: true,},
+  { phone: Number, required: true,},
 );
 
 var blogSchema = new mongoose.Schema(
