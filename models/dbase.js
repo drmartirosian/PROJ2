@@ -1,16 +1,28 @@
 var mongoose = require('mongoose');
 
+var resumeSchema = new mongoose.Schema(
+  { firstname: String, },
+  { lastname: String, },
+  { age: Number, },
+  { code: String, },
+  { employed: Boolean, },
+);
 
-var aboutmeSchema = new mongoose.Schema({ 
-  text: String, 
-});
+var badgeSchema = new mongoose.Schema(
+  { fullname: String, },
+);
+
+var blogSchema = new mongoose.Schema(
+  { text: String, },
+);
 
 var profileSchema = new mongoose.Schema({
   name: String, 
   avatar: String,
   googleId: String, 
-  aboutme: [aboutmeSchema],
-  favorites: [],
+  aboutme: [blogSchema],
+  badge: [badgeSchema],
+  resume: [resumeSchema],
 });
 
 

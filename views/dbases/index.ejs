@@ -1,22 +1,18 @@
 <%- include('../partials/header') %>
 
-<div>
-    <h1>Home</h1>
 
-    <% users.forEach(function(d) { %> 
-        <div class="profile">
 
-            <a href= "dbases/<%= d._id %>" > <%= d.name  %> </a>
-            <br>
+ <h1>Home</h1>
 
-            <form action="/<%= d._id %>?_method=PUT" method="">
-                <button class="btn btn-outline-info" type="submit" >LIKE</button>
-            </form>
-            
-            
-        </div>
-    <% }); %>
 
-</div>
+<% users.forEach(function(d) { %> 
+<div class="card" style="width: 18rem;">
+    <a class="card-body" href= "dbases/<%= d._id %>" >
+        <h2><%= d.name  %> </h2>
+    </a>
+<% }); %>
+</a>
+
+
 
 <%- include('../partials/footer') %>

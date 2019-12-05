@@ -15,7 +15,7 @@ module.exports = {
 //-------------------------------------------------
 function index(req, res, next) {
   Dbase.find({}, function(err, users, avatar) {
-    console.log(req.params)
+    // console.log(req.params)
     res.render('dbases/index', {
       users, 
       user: req.user,
@@ -88,6 +88,7 @@ function newDB(req, res){
 //-------------------------------------------------
 function edit(req, res){
   Dbase.find(function(err, users) {
+        // console.log(req.params)
     res.render('dbases/edit', {
       users, 
       user: req.user
@@ -117,4 +118,8 @@ function buttonLikes (req, res){
   console.log('button fired!')
   res.redirect('/dbases')
 };
+//LIKE BTN: put back in index.ejs 
+//<form action="/<%= d._id %>?_method=PUT" method="">
+//<button class="btn btn-outline-info" type="submit" >LIKE</button>
+//</form>
 //-------------------------------------------------

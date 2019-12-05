@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+
+<div class="show">
+    <h3>User.id: <%= user %></h3> 
+
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
+            <% users.badge.forEach(function(x) { %>
+               <a href="<%= x.fullname %>" class="col card"><%= x.text %></a>
+           <% }); %>
+             </div>
+
+
+    <h3>Under construction...</h3>
+
+   <!--- ADD TEXT --->
+   <% if (user._id.equals(users && user._id)) { %>
+    <form action="/dbases/new" method="POST"> 
+        <label>My Code Projects: </label>
+        <br>
+        <input placeholder="Badge inputs here" type="text" name="fullname">
+        <button type="submit">ADD</button>
+    </form>
+<% } %>
+
+
+  
+        
+
+ 
+
+
+
+
+
+<%- include('../partials/footer') %>
