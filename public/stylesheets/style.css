@@ -1,5 +1,18 @@
-body {
-    justify-content: center;
-    align-content: center;
-    margin-left: 100;
+.card {
+    font-size: 20px;
+    font-weight: bolder;
+    border-radius: 30px;
+}
+.nav {
+    font-size: 20px;
+    background-color: black;
+}
+.nav-item:hover {
+    background-color: white;
+}
+.footer {
+    background-color: gray;
+    height: 30%;
+    margin: 0;
+    padding: 20px;
 }

@@ -1,7 +1,5 @@
 const Dbase = require('../models/dbase');
 
-
-
 module.exports = {
   index,
   create,
@@ -119,7 +117,7 @@ function buttonLikes (req, res){
   res.redirect('/dbases')
 };
 //LIKE BTN: put back in index.ejs 
-//<form action="/<%= d._id %>?_method=PUT" method="">
-//<button class="btn btn-outline-info" type="submit" >LIKE</button>
-//</form>
+{/* <form action="/<%= d._id %>?_method=PUT" method="">
+<button class="btn btn-outline-info" type="submit" >LIKE</button>
+</form> */}
 //-------------------------------------------------

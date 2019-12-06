@@ -20,21 +20,18 @@
 
     <% if (user) { %>
         <li class="nav-item">
-        <a class="nav-link" href="/dbases/<%= user._id %>">MyProfile</a>
+            <a class="nav-link" href="/dbases/<%= user._id %>">MyProfile</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/dbases/<%= users._id %>/badge">Badge</a>
+            <a class="nav-link" href="/dbases/<%= user._id %>/badge">Badge</a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" href="/dbases/<%= user._id %>/edit">Posts</a>
         </li>
-
-     
     <% } %>
 
-    
     <% if (user) { %>
         <li class="nav-item">
             <a class="nav-link" href="/logout">LOGOUT</a>
@@ -44,6 +41,4 @@
             <a href="/auth/google">LOGIN</a>
         </li>
     <% } %>
-
-    
 </ul>
