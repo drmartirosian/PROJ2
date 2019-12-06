@@ -1,24 +1,26 @@
 <%- include('../partials/header') %>
 
- 
+
 
 <h3><%= users.name %>'s Profile</h3>
-
-
-
-
 <div class="container"> 
-
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
  <% users.aboutme.forEach(function(b) { %>
     <a href="<%- b.text %>" class="col card"><%- b.text %></a>
 <% }); %>
   </div>
+<div class="row row-cols-3">
+  <% users.badge.forEach(function(x) { %>
+    <p href="<%= x.fullname %>" class="col card"><%= x.fullname %></p>
+    <p href="<%= x.codertype %>" class="col card"><%= x.codertype %></p>
+    <p href="<%= x.phone %>" class="col card"><%= x.phone %></p>
+<% }); %>
+</div>
 
   <% if (users._id.equals(user && user._id)) { %>
     <a href="/dbases/<%= user._id %>/edit">EDIT</a>
     <% } else { %>
   <% } %>
 </div>
-
+ 
 <%- include('../partials/footer') %>

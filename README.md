@@ -11,7 +11,7 @@ As A user, I should be able to:
 2. create my profile
     edit profile
     link social networks
-3. browse other profiles
+3. browse other profiles 
 4. create badges for employers to see
     name, code background, phonenumber
 

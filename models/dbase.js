@@ -8,11 +8,11 @@ var resumeSchema = new mongoose.Schema(
   { employed: Boolean, },
 );
 
-var badgeSchema = new mongoose.Schema(
-  { fullname: String, },
-  { codertype: String, },
-  { phone: Number, },
-);
+var badgeSchema = new mongoose.Schema({
+   fullname: String, 
+   codertype: String, 
+   phone: Number,
+});
 
 var blogSchema = new mongoose.Schema(
   { text: String, },

@@ -10,15 +10,23 @@ module.exports = {
 
 //-------------------------------------------------
 function createBadge(req, res, next) {
-  // console.log(req.body)
+  console.log(req.body)
   req.user.badge.push(req.body);
-  // console.log('USER',req.user)
-  // console.log('BODY',req.body)
-  req.user.save(function(err) {
-    res.redirect('/dbases');
-  });
-  console.log('CREATEd BADGE FIRED!')
-}
+  console.log('USER',req.user)
+  console.log('BODY',req.body)
+  
+  Dbase.findById(req.user._id, function(err, db){
+    db = req.user
+    db.badge = req.body 
+    db.save()
+  })
+res.redirect('/dbases')
+  // req.user.save(function(err) {
+  //   res.redirect('/dbases');
+  console.log('CREATEd BADGE FIRED!') 
+};
+ 
+
 //-------------------------------------------------
 function dDeleteBadge(req, res, next) {
 // Remove a destination from the user
