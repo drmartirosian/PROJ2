@@ -18,7 +18,7 @@
         <a class="nav-link active" href="/dbases"><image src="https://i.imgur.com/HfNrKNn.png" alt="PIC" border="0" width="30" height="25"></a>
     </li>
 
-    <% if (user) { %>
+  
         <li class="nav-item">
             <a class="nav-link" href="/dbases/<%= user._id %>">MyProfile</a>
         </li>
@@ -28,9 +28,13 @@
         </li>
 
         <li class="nav-item">
+            <a class="nav-link" href="/dbases/<%= user._id %>/resume">Resume</a>
+        </li>
+
+        <li class="nav-item">
             <a class="nav-link" href="/dbases/<%= user._id %>/edit">Posts</a>
         </li>
-    <% } %>
+   
 
     <% if (user) { %>
         <li class="nav-item">

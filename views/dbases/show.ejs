@@ -8,16 +8,16 @@
         <div class="card d-inline-flex p-4" style="width: 18rem;">
           <img src="<%=  x.avatar %>" class="card-img-top" alt="USER AVATAR">
             <div class="">
-                <h4 class="card-title">Hello, My Name Is: <h6><%= x.fullname %></6></h4>
+                <p class="card-title">Hello, My Name Is: <br> <%= x.fullname %></p>
                 <hr>
-                <p class="card-text">Background: <%= x.codertype %></p>
-                <p class="card-text">Contact: <%= x.phone %></p>
+                <p class="card-text">Background: <br> <%= x.codertype %></p>
+                <p class="card-text">Contact: <br> <%= x.phone %></p>
             </div>
         </div>
     <% }); %>
 </div>
 
-<div class="container"> 
+<div class=""> 
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
     <% users.aboutme.forEach(function(b) { %>
       <a href="<%- b.text %>" class="col card"><%- b.text %></a>
@@ -26,10 +26,11 @@
 
 
 
-  <% if (users._id.equals(user && user._id)) { %>
+  <!-- <% if (users._id.equals(user && user._id)) { %>
     <a href="/dbases/<%= user._id %>/edit">EDIT</a>
     <% } else { %>
-  <% } %>
+  <% } %> -->
+
 </div>
  
 <%- include('../partials/footer') %>

@@ -2,7 +2,7 @@
 
 
 <div class="show">
-    <h3><%= user.name %>'s Blog</h3>
+    <h3><%= user.name %>'s Posts</h3>
 
     <!--- ADD TEXT --->
     <% if (user._id.equals(users && user._id)) { %>
@@ -16,7 +16,7 @@
 <% user.aboutme.forEach(function(b) { %>
     <div class="card" style="width: 18rem;">
         <div class="card-body">
-            <p class="card-text"> LINK:</p>
+            <p class="card-text"></p>
             <form action="/dbases/<%=b._id%>?_method=PUT" method="POST">
                 <input type="text" name="text" placeholder="   <%= b.text %>">
                 <button class="badge badge-info" type="submit">UPDATE</button>

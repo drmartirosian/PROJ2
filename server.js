@@ -23,6 +23,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var dBasesRouter = require('./routes/dbases');
 var badgesRouter = require('./routes/badges');
+var resumeRouter = require('./routes/resume');
 //----------------------------------------------------------//
 
 // view engine setup
@@ -55,6 +56,7 @@ app.use(passport.session());
 app.use('/', indexRouter);
 app.use('/dbases', dBasesRouter);
 app.use('/dbases', badgesRouter);
+app.use('/dbases', resumeRouter);
 //----------------------------------------------------------//
 
 // CATCH 404 and forward to error handler

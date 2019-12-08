@@ -5,13 +5,18 @@
  <h1>Home</h1>
 
 
-<% users.forEach(function(d) { %> 
+
 <div class="card" style="width: 18rem;">
+<% users.forEach(function(d) { %> 
+
+
     <a class="card-body" href= "dbases/<%= d._id %>" >
-        <h2><%= d.name  %> </h2>
+        <h2><%= d.name  %> </h2> 
     </a>
+
+
 <% }); %>
-</a>
+</div>
 
 
 
