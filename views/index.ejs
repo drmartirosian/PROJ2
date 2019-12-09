@@ -10,22 +10,21 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body >
-
-
-
-
-
     <h1 >daterBase</h1>
     <br>
     <p >"daterBase: the <del>worst</del> best kind of base"-Sun Tzu, 10,000BC</p>
     <br>
-    <a class="btn btn-outline-success" href="/dbases">ENTER</a>
-    
-
-
-
-
-
-    
+    <!-- <a class="btn btn-outline-success" href="/dbases">ENTER</a> -->
+    <ul>
+      <% if (user) { %>
+        <li class="nav-item">
+          <a class="btn btn-outline-success" href="/logout">LOGOUT</a>
+        </li>
+      <% } else { %>
+        <li class="btn btn-outline-success">
+          <a href="/auth/google">LOGIN</a>
+        </li>
+      <% } %>
+    </ul>
   </body>
 </html>
